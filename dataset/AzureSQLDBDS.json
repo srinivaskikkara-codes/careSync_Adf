@@ -1,0 +1,12 @@
+{
+	"name": "AzureSQLDBDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDBCaresyncLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
