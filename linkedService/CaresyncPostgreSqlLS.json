@@ -1,0 +1,23 @@
+{
+	"name": "CaresyncPostgreSqlLS",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "ep-frosty-smoke-aohdkdte-pooler.c-2.ap-southeast-1.aws.neon.tech",
+			"port": 5432,
+			"database": "neondb",
+			"username": "neondb_owner",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "Caresynckeyvaultls",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "postgres-password"
+			},
+			"sslMode": 2,
+			"authenticationType": "Basic"
+		}
+	}
+}
