@@ -1,0 +1,23 @@
+{
+	"name": "AzureSqlDBCaresyncLS",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "azuresqldf.database.windows.net",
+			"database": "azuresqldb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "admins",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SQLServerKeyvaultLS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SQLDB-password"
+			}
+		}
+	}
+}
