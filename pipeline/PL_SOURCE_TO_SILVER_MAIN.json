@@ -48,6 +48,7 @@
 						"value": "@activity('Read source tables list').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "ingest from source to silver",
@@ -135,7 +136,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "update ctrl.audit_log set status-'FAILED' ,end_time=SYSUTCDATETIME()\nWHERE adf_run_id=@{pipeline().parameters.adf_run_id} AND TABLE_ID=@{item().table_id}",
+											"value": "update ctrl.audit_log set status-'FAILED' ,end_time=SYSUTCDATETIME()\nWHERE adf_run_id='@{pipeline().parameters.adf_run_id}' AND TABLE_ID=@{item().table_id}",
 											"type": "Expression"
 										}
 									}
